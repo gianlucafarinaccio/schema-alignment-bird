@@ -1,0 +1,3432 @@
+{
+    "debit_card_specializing": {
+        "tables": {
+            "customers": [
+                [
+                    "CustomerID",
+                    "integer"
+                ],
+                [
+                    "client segment",
+                    "text"
+                ],
+                [
+                    "Currency",
+                    "text"
+                ]
+            ],
+            "gasstations": [
+                [
+                    "Gas Station ID",
+                    "integer"
+                ],
+                [
+                    "Chain ID",
+                    "integer"
+                ],
+                [
+                    "Country",
+                    "text"
+                ],
+                [
+                    "chain segment",
+                    "text"
+                ]
+            ],
+            "products": [
+                [
+                    "Product ID",
+                    "integer"
+                ],
+                [
+                    "Description",
+                    "text"
+                ]
+            ],
+            "transactions_1k": [
+                [
+                    "Transaction ID",
+                    "integer"
+                ],
+                [
+                    "Date",
+                    "date"
+                ],
+                [
+                    "Time",
+                    "text"
+                ],
+                [
+                    "Customer ID",
+                    "integer"
+                ],
+                [
+                    "Card ID",
+                    "integer"
+                ],
+                [
+                    "Gas Station ID",
+                    "integer"
+                ],
+                [
+                    "Product ID",
+                    "integer"
+                ],
+                [
+                    "Amount",
+                    "integer"
+                ],
+                [
+                    "Price",
+                    "real"
+                ]
+            ],
+            "yearmonth": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "Customer ID",
+                    "integer"
+                ],
+                [
+                    "Date",
+                    "text"
+                ],
+                [
+                    "Consumption",
+                    "real"
+                ]
+            ]
+        }
+    },
+    "financial": {
+        "tables": {
+            "account": [
+                [
+                    "account id",
+                    "integer"
+                ],
+                [
+                    "location of branch",
+                    "integer"
+                ],
+                [
+                    "frequency",
+                    "text"
+                ],
+                [
+                    "date",
+                    "date"
+                ]
+            ],
+            "card": [
+                [
+                    "credit card id",
+                    "integer"
+                ],
+                [
+                    "disposition id",
+                    "integer"
+                ],
+                [
+                    "type",
+                    "text"
+                ],
+                [
+                    "issued",
+                    "date"
+                ]
+            ],
+            "client": [
+                [
+                    "client_id",
+                    "integer"
+                ],
+                [
+                    "gender",
+                    "text"
+                ],
+                [
+                    "birth_date",
+                    "date"
+                ],
+                [
+                    "location of branch",
+                    "integer"
+                ]
+            ],
+            "disp": [
+                [
+                    "disposition id",
+                    "integer"
+                ],
+                [
+                    "client_id",
+                    "integer"
+                ],
+                [
+                    "account_id",
+                    "integer"
+                ],
+                [
+                    "type",
+                    "text"
+                ]
+            ],
+            "district": [
+                [
+                    "location of branch",
+                    "integer"
+                ],
+                [
+                    "district_name",
+                    "text"
+                ],
+                [
+                    "region",
+                    "text"
+                ],
+                [
+                    "number of inhabitants",
+                    "text"
+                ],
+                [
+                    "no. of municipalities with inhabitants < 499",
+                    "text"
+                ],
+                [
+                    "no. of municipalities with inhabitants 500-1999",
+                    "text"
+                ],
+                [
+                    "no. of municipalities with inhabitants 2000-9999",
+                    "text"
+                ],
+                [
+                    "no. of municipalities with inhabitants > 10000",
+                    "integer"
+                ],
+                [
+                    "A9",
+                    "integer"
+                ],
+                [
+                    "ratio of urban inhabitants",
+                    "real"
+                ],
+                [
+                    "average salary",
+                    "integer"
+                ],
+                [
+                    "unemployment rate 1995",
+                    "real"
+                ],
+                [
+                    "unemployment rate 1996",
+                    "real"
+                ],
+                [
+                    "no. of entrepreneurs per 1000 inhabitants",
+                    "integer"
+                ],
+                [
+                    "no. of committed crimes 1995",
+                    "integer"
+                ],
+                [
+                    "no. of committed crimes 1996",
+                    "integer"
+                ]
+            ],
+            "loan": [
+                [
+                    "loan_id",
+                    "integer"
+                ],
+                [
+                    "account_id",
+                    "integer"
+                ],
+                [
+                    "date",
+                    "date"
+                ],
+                [
+                    "amount",
+                    "integer"
+                ],
+                [
+                    "duration",
+                    "integer"
+                ],
+                [
+                    "monthly payments",
+                    "real"
+                ],
+                [
+                    "status",
+                    "text"
+                ]
+            ],
+            "order": [
+                [
+                    "order_id",
+                    "integer"
+                ],
+                [
+                    "account_id",
+                    "integer"
+                ],
+                [
+                    "bank of the recipient",
+                    "text"
+                ],
+                [
+                    "account of the recipient",
+                    "integer"
+                ],
+                [
+                    "debited amount",
+                    "real"
+                ],
+                [
+                    "characterization of the payment",
+                    "text"
+                ]
+            ],
+            "trans": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "transaction id",
+                    "integer"
+                ],
+                [
+                    "account_id",
+                    "integer"
+                ],
+                [
+                    "date of transaction",
+                    "date"
+                ],
+                [
+                    "+/- transaction",
+                    "text"
+                ],
+                [
+                    "mode of transaction",
+                    "text"
+                ],
+                [
+                    "amount of money",
+                    "integer"
+                ],
+                [
+                    "balance after transaction",
+                    "integer"
+                ],
+                [
+                    "characterization of the transaction",
+                    "text"
+                ],
+                [
+                    "bank of the partner",
+                    "text"
+                ],
+                [
+                    "account of the partner",
+                    "integer"
+                ]
+            ]
+        }
+    },
+    "formula_1": {
+        "tables": {
+            "circuits": [
+                [
+                    "circuit Id",
+                    "integer"
+                ],
+                [
+                    "circuit reference name",
+                    "text"
+                ],
+                [
+                    "name",
+                    "text"
+                ],
+                [
+                    "location",
+                    "text"
+                ],
+                [
+                    "country",
+                    "text"
+                ],
+                [
+                    "latitude",
+                    "real"
+                ],
+                [
+                    "longitude",
+                    "real"
+                ],
+                [
+                    "alt",
+                    "integer"
+                ],
+                [
+                    "url",
+                    "text"
+                ]
+            ],
+            "constructors": [
+                [
+                    "constructor Id",
+                    "integer"
+                ],
+                [
+                    "Constructor Reference name",
+                    "text"
+                ],
+                [
+                    "name",
+                    "text"
+                ],
+                [
+                    "nationality",
+                    "text"
+                ],
+                [
+                    "url",
+                    "text"
+                ]
+            ],
+            "drivers": [
+                [
+                    "driver ID",
+                    "integer"
+                ],
+                [
+                    "driver reference name",
+                    "text"
+                ],
+                [
+                    "number",
+                    "integer"
+                ],
+                [
+                    "code",
+                    "text"
+                ],
+                [
+                    "forename",
+                    "text"
+                ],
+                [
+                    "surname",
+                    "text"
+                ],
+                [
+                    "date of birth",
+                    "date"
+                ],
+                [
+                    "nationality",
+                    "text"
+                ],
+                [
+                    "url",
+                    "text"
+                ]
+            ],
+            "seasons": [
+                [
+                    "race ID",
+                    "integer"
+                ],
+                [
+                    "url",
+                    "text"
+                ]
+            ],
+            "races": [
+                [
+                    "race ID",
+                    "integer"
+                ],
+                [
+                    "year",
+                    "integer"
+                ],
+                [
+                    "round",
+                    "integer"
+                ],
+                [
+                    "Circuit Id",
+                    "integer"
+                ],
+                [
+                    "name",
+                    "text"
+                ],
+                [
+                    "date",
+                    "date"
+                ],
+                [
+                    "time",
+                    "text"
+                ],
+                [
+                    "url",
+                    "text"
+                ]
+            ],
+            "constructorResults": [
+                [
+                    "constructor Results Id",
+                    "integer"
+                ],
+                [
+                    "race Id",
+                    "integer"
+                ],
+                [
+                    "constructor Id",
+                    "integer"
+                ],
+                [
+                    "points",
+                    "real"
+                ],
+                [
+                    "status",
+                    "text"
+                ]
+            ],
+            "constructorStandings": [
+                [
+                    "constructor Standings Id",
+                    "integer"
+                ],
+                [
+                    "race id",
+                    "integer"
+                ],
+                [
+                    "constructor id",
+                    "integer"
+                ],
+                [
+                    "points",
+                    "real"
+                ],
+                [
+                    "position",
+                    "integer"
+                ],
+                [
+                    "position text",
+                    "text"
+                ],
+                [
+                    "wins",
+                    "integer"
+                ]
+            ],
+            "driverStandings": [
+                [
+                    "driver Standings Id",
+                    "integer"
+                ],
+                [
+                    "constructor Reference name",
+                    "integer"
+                ],
+                [
+                    "driverId",
+                    "integer"
+                ],
+                [
+                    "points",
+                    "real"
+                ],
+                [
+                    "position",
+                    "integer"
+                ],
+                [
+                    "position text",
+                    "text"
+                ],
+                [
+                    "wins",
+                    "integer"
+                ]
+            ],
+            "lapTimes": [
+                [
+                    "race ID",
+                    "integer"
+                ],
+                [
+                    "driver ID",
+                    "integer"
+                ],
+                [
+                    "lap",
+                    "integer"
+                ],
+                [
+                    "position",
+                    "integer"
+                ],
+                [
+                    "time",
+                    "text"
+                ],
+                [
+                    "milliseconds",
+                    "integer"
+                ]
+            ],
+            "pitStops": [
+                [
+                    "race ID",
+                    "integer"
+                ],
+                [
+                    "driver ID",
+                    "integer"
+                ],
+                [
+                    "stop",
+                    "integer"
+                ],
+                [
+                    "lap",
+                    "integer"
+                ],
+                [
+                    "time",
+                    "text"
+                ],
+                [
+                    "duration",
+                    "text"
+                ],
+                [
+                    "milliseconds",
+                    "integer"
+                ]
+            ],
+            "qualifying": [
+                [
+                    "qualify Id",
+                    "integer"
+                ],
+                [
+                    "race Id",
+                    "integer"
+                ],
+                [
+                    "driver Id",
+                    "integer"
+                ],
+                [
+                    "constructor id",
+                    "integer"
+                ],
+                [
+                    "number",
+                    "integer"
+                ],
+                [
+                    "position",
+                    "integer"
+                ],
+                [
+                    "qualifying 1",
+                    "text"
+                ],
+                [
+                    "qualifying 2",
+                    "text"
+                ],
+                [
+                    "qualifying 3",
+                    "text"
+                ]
+            ],
+            "status": [
+                [
+                    "status ID",
+                    "integer"
+                ],
+                [
+                    "status",
+                    "text"
+                ]
+            ],
+            "results": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "Result ID",
+                    "integer"
+                ],
+                [
+                    "race ID",
+                    "integer"
+                ],
+                [
+                    "driver ID",
+                    "integer"
+                ],
+                [
+                    "constructor Id",
+                    "integer"
+                ],
+                [
+                    "number",
+                    "integer"
+                ],
+                [
+                    "grid",
+                    "integer"
+                ],
+                [
+                    "position",
+                    "integer"
+                ],
+                [
+                    "position text",
+                    "text"
+                ],
+                [
+                    "position order",
+                    "integer"
+                ],
+                [
+                    "points",
+                    "real"
+                ],
+                [
+                    "laps",
+                    "integer"
+                ],
+                [
+                    "time",
+                    "text"
+                ],
+                [
+                    "milliseconds",
+                    "integer"
+                ],
+                [
+                    "fastest lap",
+                    "integer"
+                ],
+                [
+                    "rank",
+                    "integer"
+                ],
+                [
+                    "fastest Lap Time",
+                    "text"
+                ],
+                [
+                    "fastest Lap Speed",
+                    "text"
+                ],
+                [
+                    "status Id",
+                    "integer"
+                ]
+            ]
+        }
+    },
+    "california_schools": {
+        "tables": {
+            "frpm": [
+                [
+                    "CDSCode",
+                    "text"
+                ],
+                [
+                    "Academic Year",
+                    "text"
+                ],
+                [
+                    "County Code",
+                    "text"
+                ],
+                [
+                    "District Code",
+                    "integer"
+                ],
+                [
+                    "School Code",
+                    "text"
+                ],
+                [
+                    "County Name",
+                    "text"
+                ],
+                [
+                    "District Name",
+                    "text"
+                ],
+                [
+                    "School Name",
+                    "text"
+                ],
+                [
+                    "District Type",
+                    "text"
+                ],
+                [
+                    "School Type",
+                    "text"
+                ],
+                [
+                    "Educational Option Type",
+                    "text"
+                ],
+                [
+                    "NSLP Provision Status",
+                    "text"
+                ],
+                [
+                    "Charter School (Y/N)",
+                    "integer"
+                ],
+                [
+                    "Charter School Number",
+                    "text"
+                ],
+                [
+                    "Charter Funding Type",
+                    "text"
+                ],
+                [
+                    "IRC",
+                    "integer"
+                ],
+                [
+                    "Low Grade",
+                    "text"
+                ],
+                [
+                    "High Grade",
+                    "text"
+                ],
+                [
+                    "Enrollment (K-12)",
+                    "real"
+                ],
+                [
+                    "Free Meal Count (K-12)",
+                    "real"
+                ],
+                [
+                    "Percent (%) Eligible Free (K-12)",
+                    "real"
+                ],
+                [
+                    "FRPM Count (K-12)",
+                    "real"
+                ],
+                [
+                    "Percent (%) Eligible FRPM (K-12)",
+                    "real"
+                ],
+                [
+                    "Enrollment (Ages 5-17)",
+                    "real"
+                ],
+                [
+                    "Free Meal Count (Ages 5-17)",
+                    "real"
+                ],
+                [
+                    "Percent (%) Eligible Free (Ages 5-17)",
+                    "real"
+                ],
+                [
+                    "FRPM Count (Ages 5-17)",
+                    "real"
+                ],
+                [
+                    "Percent (%) Eligible FRPM (Ages 5-17)",
+                    "real"
+                ],
+                [
+                    "2013-14 CALPADS Fall 1 Certification Status",
+                    "integer"
+                ]
+            ],
+            "satscores": [
+                [
+                    "cds",
+                    "text"
+                ],
+                [
+                    "rtype",
+                    "text"
+                ],
+                [
+                    "school name",
+                    "text"
+                ],
+                [
+                    "district name",
+                    "text"
+                ],
+                [
+                    "county name",
+                    "text"
+                ],
+                [
+                    "enrollment (1st-12nd grade)",
+                    "integer"
+                ],
+                [
+                    "Number of Test Takers",
+                    "integer"
+                ],
+                [
+                    "average scores in Reading",
+                    "integer"
+                ],
+                [
+                    "average scores in Math",
+                    "integer"
+                ],
+                [
+                    "average scores in writing",
+                    "integer"
+                ],
+                [
+                    "Number of Test Takers Whose Total SAT Scores Are Greater or Equal to 1500",
+                    "integer"
+                ]
+            ],
+            "schools": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "CDSCode",
+                    "text"
+                ],
+                [
+                    "National Center for Educational Statistics school district identification number",
+                    "text"
+                ],
+                [
+                    "National Center for Educational Statistics school identification number",
+                    "text"
+                ],
+                [
+                    "StatusType",
+                    "text"
+                ],
+                [
+                    "County",
+                    "text"
+                ],
+                [
+                    "District",
+                    "text"
+                ],
+                [
+                    "School",
+                    "text"
+                ],
+                [
+                    "Street",
+                    "text"
+                ],
+                [
+                    "street address",
+                    "text"
+                ],
+                [
+                    "City",
+                    "text"
+                ],
+                [
+                    "Zip",
+                    "text"
+                ],
+                [
+                    "State",
+                    "text"
+                ],
+                [
+                    "MailStreet",
+                    "text"
+                ],
+                [
+                    "mailing street address",
+                    "text"
+                ],
+                [
+                    "mailing city",
+                    "text"
+                ],
+                [
+                    "mailing zip",
+                    "text"
+                ],
+                [
+                    "mailing state",
+                    "text"
+                ],
+                [
+                    "Phone",
+                    "text"
+                ],
+                [
+                    "extension",
+                    "text"
+                ],
+                [
+                    "Website",
+                    "text"
+                ],
+                [
+                    "OpenDate",
+                    "date"
+                ],
+                [
+                    "ClosedDate",
+                    "date"
+                ],
+                [
+                    "Charter",
+                    "integer"
+                ],
+                [
+                    "CharterNum",
+                    "text"
+                ],
+                [
+                    "FundingType",
+                    "text"
+                ],
+                [
+                    "District Ownership Code",
+                    "text"
+                ],
+                [
+                    "The District Ownership Code Type",
+                    "text"
+                ],
+                [
+                    "School Ownership Code",
+                    "text"
+                ],
+                [
+                    "School Ownership Code Type",
+                    "text"
+                ],
+                [
+                    "Education Option Code",
+                    "text"
+                ],
+                [
+                    "Educational Option Name",
+                    "text"
+                ],
+                [
+                    "Educational Instruction Level Code",
+                    "text"
+                ],
+                [
+                    "Educational Instruction Level Name",
+                    "text"
+                ],
+                [
+                    "grade span offered",
+                    "text"
+                ],
+                [
+                    "grade span served.",
+                    "text"
+                ],
+                [
+                    "Virtual",
+                    "text"
+                ],
+                [
+                    "Magnet",
+                    "integer"
+                ],
+                [
+                    "Latitude",
+                    "real"
+                ],
+                [
+                    "Longitude",
+                    "real"
+                ],
+                [
+                    "administrator's first name 1",
+                    "text"
+                ],
+                [
+                    "administrator's last name 1",
+                    "text"
+                ],
+                [
+                    "administrator's email address 1",
+                    "text"
+                ],
+                [
+                    "administrator's first name 2",
+                    "text"
+                ],
+                [
+                    "administrator's last name 2",
+                    "text"
+                ],
+                [
+                    "administrator's email address 2",
+                    "text"
+                ],
+                [
+                    "administrator's first name 3",
+                    "text"
+                ],
+                [
+                    "administrator's last name 3",
+                    "text"
+                ],
+                [
+                    "administrator's email address 3",
+                    "text"
+                ],
+                [
+                    "Last Update",
+                    "date"
+                ]
+            ]
+        }
+    },
+    "card_games": {
+        "tables": {
+            "cards": [
+                [
+                    "unique id number identifying the cards",
+                    "integer"
+                ],
+                [
+                    "artist",
+                    "text"
+                ],
+                [
+                    "ascii Name",
+                    "text"
+                ],
+                [
+                    "availability",
+                    "text"
+                ],
+                [
+                    "border Color",
+                    "text"
+                ],
+                [
+                    "card Kingdom Foil Id",
+                    "text"
+                ],
+                [
+                    "card Kingdom Id",
+                    "text"
+                ],
+                [
+                    "color Identity",
+                    "text"
+                ],
+                [
+                    "color Indicator",
+                    "text"
+                ],
+                [
+                    "colors",
+                    "text"
+                ],
+                [
+                    "converted Mana Cost",
+                    "real"
+                ],
+                [
+                    "duel Deck",
+                    "text"
+                ],
+                [
+                    "rec Rank in edh",
+                    "integer"
+                ],
+                [
+                    "face Converted Mana Cost",
+                    "real"
+                ],
+                [
+                    "face Name",
+                    "text"
+                ],
+                [
+                    "flavor Name",
+                    "text"
+                ],
+                [
+                    "flavor Text",
+                    "text"
+                ],
+                [
+                    "frame Effects",
+                    "text"
+                ],
+                [
+                    "frame Version",
+                    "text"
+                ],
+                [
+                    "hand",
+                    "text"
+                ],
+                [
+                    "has Alternative Deck Limit",
+                    "integer"
+                ],
+                [
+                    "has Content Warning",
+                    "integer"
+                ],
+                [
+                    "has Foil",
+                    "integer"
+                ],
+                [
+                    "has Non Foil",
+                    "integer"
+                ],
+                [
+                    "is Alternative",
+                    "integer"
+                ],
+                [
+                    "is Full Art",
+                    "integer"
+                ],
+                [
+                    "is Online Only",
+                    "integer"
+                ],
+                [
+                    "is Oversized",
+                    "integer"
+                ],
+                [
+                    "is Promotion",
+                    "integer"
+                ],
+                [
+                    "is Reprint",
+                    "integer"
+                ],
+                [
+                    "is Reserved",
+                    "integer"
+                ],
+                [
+                    "is Starter",
+                    "integer"
+                ],
+                [
+                    "is Story Spotlight",
+                    "integer"
+                ],
+                [
+                    "is Text less",
+                    "integer"
+                ],
+                [
+                    "is Time shifted",
+                    "integer"
+                ],
+                [
+                    "keywords",
+                    "text"
+                ],
+                [
+                    "layout",
+                    "text"
+                ],
+                [
+                    "leadership Skills",
+                    "text"
+                ],
+                [
+                    "life",
+                    "text"
+                ],
+                [
+                    "loyalty",
+                    "text"
+                ],
+                [
+                    "mana Cost",
+                    "text"
+                ],
+                [
+                    "mcmId",
+                    "text"
+                ],
+                [
+                    "mcmMetaId",
+                    "text"
+                ],
+                [
+                    "mtgArenaId",
+                    "text"
+                ],
+                [
+                    "mtgjsonV4Id",
+                    "text"
+                ],
+                [
+                    "mtgoFoilId",
+                    "text"
+                ],
+                [
+                    "mtgoId",
+                    "text"
+                ],
+                [
+                    "multiverseId",
+                    "text"
+                ],
+                [
+                    "name",
+                    "text"
+                ],
+                [
+                    "number",
+                    "text"
+                ],
+                [
+                    "originalReleaseDate",
+                    "text"
+                ],
+                [
+                    "originalText",
+                    "text"
+                ],
+                [
+                    "originalType",
+                    "text"
+                ],
+                [
+                    "otherFaceIds",
+                    "text"
+                ],
+                [
+                    "power",
+                    "text"
+                ],
+                [
+                    "printings",
+                    "text"
+                ],
+                [
+                    "promo Types",
+                    "text"
+                ],
+                [
+                    "purchase Urls",
+                    "text"
+                ],
+                [
+                    "rarity",
+                    "text"
+                ],
+                [
+                    "scryfallId",
+                    "text"
+                ],
+                [
+                    "scryfallIllustrationId",
+                    "text"
+                ],
+                [
+                    "scryfallOracleId",
+                    "text"
+                ],
+                [
+                    "Set Code",
+                    "text"
+                ],
+                [
+                    "side",
+                    "text"
+                ],
+                [
+                    "subtypes",
+                    "text"
+                ],
+                [
+                    "super types",
+                    "text"
+                ],
+                [
+                    "tcg player ProductId",
+                    "text"
+                ],
+                [
+                    "text",
+                    "text"
+                ],
+                [
+                    "toughness",
+                    "text"
+                ],
+                [
+                    "type",
+                    "text"
+                ],
+                [
+                    "types",
+                    "text"
+                ],
+                [
+                    "uuid",
+                    "text"
+                ],
+                [
+                    "variations",
+                    "text"
+                ],
+                [
+                    "watermark",
+                    "text"
+                ]
+            ],
+            "foreign_data": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "flavor Text",
+                    "text"
+                ],
+                [
+                    "language",
+                    "text"
+                ],
+                [
+                    "multiverseid",
+                    "integer"
+                ],
+                [
+                    "name",
+                    "text"
+                ],
+                [
+                    "text",
+                    "text"
+                ],
+                [
+                    "type",
+                    "text"
+                ],
+                [
+                    "uuid",
+                    "text"
+                ]
+            ],
+            "legalities": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "format",
+                    "text"
+                ],
+                [
+                    "status",
+                    "text"
+                ],
+                [
+                    "uuid",
+                    "text"
+                ]
+            ],
+            "sets": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "base Set Size",
+                    "integer"
+                ],
+                [
+                    "block",
+                    "text"
+                ],
+                [
+                    "booster",
+                    "text"
+                ],
+                [
+                    "code",
+                    "text"
+                ],
+                [
+                    "is Foil Only",
+                    "integer"
+                ],
+                [
+                    "is Foreign Only",
+                    "integer"
+                ],
+                [
+                    "is Non Foil Only",
+                    "integer"
+                ],
+                [
+                    "is Online Only",
+                    "integer"
+                ],
+                [
+                    "is Partial Preview",
+                    "integer"
+                ],
+                [
+                    "keyrune Code",
+                    "text"
+                ],
+                [
+                    "magic card market id",
+                    "integer"
+                ],
+                [
+                    "magic card market ID Extras",
+                    "integer"
+                ],
+                [
+                    "magic card market name",
+                    "text"
+                ],
+                [
+                    "magic the gathering online code",
+                    "text"
+                ],
+                [
+                    "name",
+                    "text"
+                ],
+                [
+                    "parent Code",
+                    "text"
+                ],
+                [
+                    "release Date",
+                    "date"
+                ],
+                [
+                    "tcg player Group Id",
+                    "integer"
+                ],
+                [
+                    "total Set Size",
+                    "integer"
+                ],
+                [
+                    "type",
+                    "text"
+                ]
+            ],
+            "set_translations": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "language",
+                    "text"
+                ],
+                [
+                    "set code",
+                    "text"
+                ],
+                [
+                    "translation",
+                    "text"
+                ]
+            ],
+            "ruling": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "date",
+                    "date"
+                ],
+                [
+                    "text",
+                    "text"
+                ],
+                [
+                    "uuid",
+                    "text"
+                ]
+            ]
+        }
+    },
+    "european_football_2": {
+        "tables": {
+            "Player_Attributes": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "player federation international football association api id",
+                    "integer"
+                ],
+                [
+                    "player api id",
+                    "integer"
+                ],
+                [
+                    "date",
+                    "text"
+                ],
+                [
+                    "overall_rating",
+                    "integer"
+                ],
+                [
+                    "potential",
+                    "integer"
+                ],
+                [
+                    "preferred foot",
+                    "text"
+                ],
+                [
+                    "attacking work rate",
+                    "text"
+                ],
+                [
+                    "defensive_work_rate",
+                    "text"
+                ],
+                [
+                    "crossing",
+                    "integer"
+                ],
+                [
+                    "finishing",
+                    "integer"
+                ],
+                [
+                    "heading accuracy",
+                    "integer"
+                ],
+                [
+                    "short passing",
+                    "integer"
+                ],
+                [
+                    "volleys",
+                    "integer"
+                ],
+                [
+                    "dribbling",
+                    "integer"
+                ],
+                [
+                    "curve",
+                    "integer"
+                ],
+                [
+                    "free kick accuracy",
+                    "integer"
+                ],
+                [
+                    "long passing",
+                    "integer"
+                ],
+                [
+                    "ball control",
+                    "integer"
+                ],
+                [
+                    "acceleration",
+                    "integer"
+                ],
+                [
+                    "sprint speed",
+                    "integer"
+                ],
+                [
+                    "agility",
+                    "integer"
+                ],
+                [
+                    "reactions",
+                    "integer"
+                ],
+                [
+                    "balance",
+                    "integer"
+                ],
+                [
+                    "shot power",
+                    "integer"
+                ],
+                [
+                    "jumping",
+                    "integer"
+                ],
+                [
+                    "stamina",
+                    "integer"
+                ],
+                [
+                    "strength",
+                    "integer"
+                ],
+                [
+                    "long shots",
+                    "integer"
+                ],
+                [
+                    "aggression",
+                    "integer"
+                ],
+                [
+                    "interceptions",
+                    "integer"
+                ],
+                [
+                    "positioning",
+                    "integer"
+                ],
+                [
+                    "vision",
+                    "integer"
+                ],
+                [
+                    "penalties",
+                    "integer"
+                ],
+                [
+                    "marking",
+                    "integer"
+                ],
+                [
+                    "standing tackle",
+                    "integer"
+                ],
+                [
+                    "sliding tackle",
+                    "integer"
+                ],
+                [
+                    "goalkeep diving",
+                    "integer"
+                ],
+                [
+                    "goalkeep handling",
+                    "integer"
+                ],
+                [
+                    "goalkeep kicking",
+                    "integer"
+                ],
+                [
+                    "goalkeep positioning",
+                    "integer"
+                ],
+                [
+                    "goalkeep reflexes",
+                    "integer"
+                ]
+            ],
+            "Player": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "player api id",
+                    "integer"
+                ],
+                [
+                    "player name",
+                    "text"
+                ],
+                [
+                    "player federation international football association api id",
+                    "integer"
+                ],
+                [
+                    "birthday",
+                    "text"
+                ],
+                [
+                    "height",
+                    "integer"
+                ],
+                [
+                    "weight",
+                    "integer"
+                ]
+            ],
+            "League": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "country id",
+                    "integer"
+                ],
+                [
+                    "name",
+                    "text"
+                ]
+            ],
+            "Country": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "name",
+                    "text"
+                ]
+            ],
+            "Team": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "team api id",
+                    "integer"
+                ],
+                [
+                    "team federation international football association api id",
+                    "integer"
+                ],
+                [
+                    "team long name",
+                    "text"
+                ],
+                [
+                    "team short name",
+                    "text"
+                ]
+            ],
+            "Team_Attributes": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "team federation international football association api id",
+                    "integer"
+                ],
+                [
+                    "team api id",
+                    "integer"
+                ],
+                [
+                    "date",
+                    "text"
+                ],
+                [
+                    "build Up Play Speed",
+                    "integer"
+                ],
+                [
+                    "build Up Play Speed Class",
+                    "text"
+                ],
+                [
+                    "build Up Play Dribbling",
+                    "integer"
+                ],
+                [
+                    "build Up Play Dribbling Class",
+                    "text"
+                ],
+                [
+                    "build Up Play Passing",
+                    "integer"
+                ],
+                [
+                    "build Up Play Passing Class",
+                    "text"
+                ],
+                [
+                    "build Up Play Positioning Class",
+                    "text"
+                ],
+                [
+                    "chance Creation Passing",
+                    "integer"
+                ],
+                [
+                    "chance Creation Passing Class",
+                    "text"
+                ],
+                [
+                    "chance Creation Crossing",
+                    "integer"
+                ],
+                [
+                    "chance Creation Crossing Class",
+                    "text"
+                ],
+                [
+                    "chance Creation Shooting",
+                    "integer"
+                ],
+                [
+                    "chance Creation Shooting Class",
+                    "text"
+                ],
+                [
+                    "chance Creation Positioning Class",
+                    "text"
+                ],
+                [
+                    "defence Pressure",
+                    "integer"
+                ],
+                [
+                    "defence Pressure Class",
+                    "text"
+                ],
+                [
+                    "defence Aggression",
+                    "integer"
+                ],
+                [
+                    "defence Aggression Class",
+                    "text"
+                ],
+                [
+                    "defence Team Width",
+                    "integer"
+                ],
+                [
+                    "defence Team Width Class",
+                    "text"
+                ],
+                [
+                    "defence Defender Line Class",
+                    "text"
+                ]
+            ],
+            "Match": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "country id",
+                    "integer"
+                ],
+                [
+                    "league id",
+                    "integer"
+                ],
+                [
+                    "season",
+                    "text"
+                ],
+                [
+                    "stage",
+                    "integer"
+                ],
+                [
+                    "date",
+                    "text"
+                ],
+                [
+                    "match api id",
+                    "integer"
+                ],
+                [
+                    "home team api id",
+                    "integer"
+                ],
+                [
+                    "away team api id",
+                    "integer"
+                ],
+                [
+                    "home team goal",
+                    "integer"
+                ],
+                [
+                    "away team goal",
+                    "integer"
+                ],
+                [
+                    "home_player_X1",
+                    "integer"
+                ],
+                [
+                    "home_player_X2",
+                    "integer"
+                ],
+                [
+                    "home_player_X3",
+                    "integer"
+                ],
+                [
+                    "home_player_X4",
+                    "integer"
+                ],
+                [
+                    "home_player_X5",
+                    "integer"
+                ],
+                [
+                    "home_player_X6",
+                    "integer"
+                ],
+                [
+                    "home_player_X7",
+                    "integer"
+                ],
+                [
+                    "home_player_X8",
+                    "integer"
+                ],
+                [
+                    "home_player_X9",
+                    "integer"
+                ],
+                [
+                    "home_player_X10",
+                    "integer"
+                ],
+                [
+                    "home_player_X11",
+                    "integer"
+                ],
+                [
+                    "away_player_X1",
+                    "integer"
+                ],
+                [
+                    "away_player_X2",
+                    "integer"
+                ],
+                [
+                    "away_player_X3",
+                    "integer"
+                ],
+                [
+                    "away_player_X4",
+                    "integer"
+                ],
+                [
+                    "away_player_X5",
+                    "integer"
+                ],
+                [
+                    "away_player_X6",
+                    "integer"
+                ],
+                [
+                    "away_player_X7",
+                    "integer"
+                ],
+                [
+                    "away_player_X8",
+                    "integer"
+                ],
+                [
+                    "away_player_X9",
+                    "integer"
+                ],
+                [
+                    "away_player_X10",
+                    "integer"
+                ],
+                [
+                    "away_player_X11",
+                    "integer"
+                ],
+                [
+                    "home_player_Y1",
+                    "integer"
+                ],
+                [
+                    "home_player_Y2",
+                    "integer"
+                ],
+                [
+                    "home_player_Y3",
+                    "integer"
+                ],
+                [
+                    "home_player_Y4",
+                    "integer"
+                ],
+                [
+                    "home_player_Y5",
+                    "integer"
+                ],
+                [
+                    "home_player_Y6",
+                    "integer"
+                ],
+                [
+                    "home_player_Y7",
+                    "integer"
+                ],
+                [
+                    "home_player_Y8",
+                    "integer"
+                ],
+                [
+                    "home_player_Y9",
+                    "integer"
+                ],
+                [
+                    "home_player_Y10",
+                    "integer"
+                ],
+                [
+                    "home_player_Y11",
+                    "integer"
+                ],
+                [
+                    "away_player_Y1",
+                    "integer"
+                ],
+                [
+                    "away_player_Y2",
+                    "integer"
+                ],
+                [
+                    "away_player_Y3",
+                    "integer"
+                ],
+                [
+                    "away_player_Y4",
+                    "integer"
+                ],
+                [
+                    "away_player_Y5",
+                    "integer"
+                ],
+                [
+                    "away_player_Y6",
+                    "integer"
+                ],
+                [
+                    "away_player_Y7",
+                    "integer"
+                ],
+                [
+                    "away_player_Y8",
+                    "integer"
+                ],
+                [
+                    "away_player_Y9",
+                    "integer"
+                ],
+                [
+                    "away_player_Y10",
+                    "integer"
+                ],
+                [
+                    "away_player_Y11",
+                    "integer"
+                ],
+                [
+                    "home_player_1",
+                    "integer"
+                ],
+                [
+                    "home_player_2",
+                    "integer"
+                ],
+                [
+                    "home_player_3",
+                    "integer"
+                ],
+                [
+                    "home_player_4",
+                    "integer"
+                ],
+                [
+                    "home_player_5",
+                    "integer"
+                ],
+                [
+                    "home_player_6",
+                    "integer"
+                ],
+                [
+                    "home_player_7",
+                    "integer"
+                ],
+                [
+                    "home_player_8",
+                    "integer"
+                ],
+                [
+                    "home_player_9",
+                    "integer"
+                ],
+                [
+                    "home_player_10",
+                    "integer"
+                ],
+                [
+                    "home_player_11",
+                    "integer"
+                ],
+                [
+                    "away_player_1",
+                    "integer"
+                ],
+                [
+                    "away_player_2",
+                    "integer"
+                ],
+                [
+                    "away_player_3",
+                    "integer"
+                ],
+                [
+                    "away_player_4",
+                    "integer"
+                ],
+                [
+                    "away_player_5",
+                    "integer"
+                ],
+                [
+                    "away_player_6",
+                    "integer"
+                ],
+                [
+                    "away_player_7",
+                    "integer"
+                ],
+                [
+                    "away_player_8",
+                    "integer"
+                ],
+                [
+                    "away_player_9",
+                    "integer"
+                ],
+                [
+                    "away_player_10",
+                    "integer"
+                ],
+                [
+                    "away_player_11",
+                    "integer"
+                ],
+                [
+                    "goal",
+                    "text"
+                ],
+                [
+                    "shot on",
+                    "text"
+                ],
+                [
+                    "shot off",
+                    "text"
+                ],
+                [
+                    "foul commit",
+                    "text"
+                ],
+                [
+                    "card",
+                    "text"
+                ],
+                [
+                    "cross",
+                    "text"
+                ],
+                [
+                    "corner",
+                    "text"
+                ],
+                [
+                    "possession",
+                    "text"
+                ],
+                [
+                    "B365H",
+                    "real"
+                ],
+                [
+                    "B365D",
+                    "real"
+                ],
+                [
+                    "B365A",
+                    "real"
+                ],
+                [
+                    "BWH",
+                    "real"
+                ],
+                [
+                    "BWD",
+                    "real"
+                ],
+                [
+                    "BWA",
+                    "real"
+                ],
+                [
+                    "IWH",
+                    "real"
+                ],
+                [
+                    "IWD",
+                    "real"
+                ],
+                [
+                    "IWA",
+                    "real"
+                ],
+                [
+                    "LBH",
+                    "real"
+                ],
+                [
+                    "LBD",
+                    "real"
+                ],
+                [
+                    "LBA",
+                    "real"
+                ],
+                [
+                    "PSH",
+                    "real"
+                ],
+                [
+                    "PSD",
+                    "real"
+                ],
+                [
+                    "PSA",
+                    "real"
+                ],
+                [
+                    "WHH",
+                    "real"
+                ],
+                [
+                    "WHD",
+                    "real"
+                ],
+                [
+                    "WHA",
+                    "real"
+                ],
+                [
+                    "SJH",
+                    "real"
+                ],
+                [
+                    "SJD",
+                    "real"
+                ],
+                [
+                    "SJA",
+                    "real"
+                ],
+                [
+                    "VCH",
+                    "real"
+                ],
+                [
+                    "VCD",
+                    "real"
+                ],
+                [
+                    "VCA",
+                    "real"
+                ],
+                [
+                    "GBH",
+                    "real"
+                ],
+                [
+                    "GBD",
+                    "real"
+                ],
+                [
+                    "GBA",
+                    "real"
+                ],
+                [
+                    "BSH",
+                    "real"
+                ],
+                [
+                    "BSD",
+                    "real"
+                ],
+                [
+                    "BSA",
+                    "real"
+                ]
+            ]
+        }
+    },
+    "thrombosis_prediction": {
+        "tables": {
+            "Examination": [
+                [
+                    "ID",
+                    "integer"
+                ],
+                [
+                    "Examination Date",
+                    "date"
+                ],
+                [
+                    "anti-Cardiolipin antibody (IgG)",
+                    "real"
+                ],
+                [
+                    "anti-Cardiolipin antibody (IgM)",
+                    "real"
+                ],
+                [
+                    "anti-nucleus antibody",
+                    "integer"
+                ],
+                [
+                    "pattern observed in the sheet of ANA examination",
+                    "text"
+                ],
+                [
+                    "anti-Cardiolipin antibody (IgA) concentration",
+                    "integer"
+                ],
+                [
+                    "Diagnosis",
+                    "text"
+                ],
+                [
+                    "measure of degree of coagulation",
+                    "text"
+                ],
+                [
+                    "measure of degree of coagulation",
+                    "text"
+                ],
+                [
+                    "measure of degree of coagulation",
+                    "text"
+                ],
+                [
+                    "Symptoms",
+                    "text"
+                ],
+                [
+                    "Thrombosis",
+                    "integer"
+                ]
+            ],
+            "Patient": [
+                [
+                    "ID",
+                    "integer"
+                ],
+                [
+                    "SEX",
+                    "text"
+                ],
+                [
+                    "Birthday",
+                    "date"
+                ],
+                [
+                    "Description",
+                    "date"
+                ],
+                [
+                    "First Date",
+                    "date"
+                ],
+                [
+                    "Admission",
+                    "text"
+                ],
+                [
+                    "Diagnosis",
+                    "text"
+                ]
+            ],
+            "Laboratory": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "ID",
+                    "integer"
+                ],
+                [
+                    "Date",
+                    "date"
+                ],
+                [
+                    "AST glutamic oxaloacetic transaminase",
+                    "integer"
+                ],
+                [
+                    "ALT glutamic pyruvic transaminase",
+                    "integer"
+                ],
+                [
+                    "lactate dehydrogenase",
+                    "integer"
+                ],
+                [
+                    "alkaliphophatase",
+                    "integer"
+                ],
+                [
+                    "total protein",
+                    "real"
+                ],
+                [
+                    "albumin",
+                    "real"
+                ],
+                [
+                    "uric acid",
+                    "real"
+                ],
+                [
+                    "urea nitrogen",
+                    "integer"
+                ],
+                [
+                    "creatinine",
+                    "real"
+                ],
+                [
+                    "total bilirubin",
+                    "real"
+                ],
+                [
+                    "total cholesterol",
+                    "integer"
+                ],
+                [
+                    "triglyceride",
+                    "integer"
+                ],
+                [
+                    "creatinine phosphokinase",
+                    "integer"
+                ],
+                [
+                    "blood glucose",
+                    "integer"
+                ],
+                [
+                    "White blood cell",
+                    "real"
+                ],
+                [
+                    "Red blood cell",
+                    "real"
+                ],
+                [
+                    "Hemoglobin",
+                    "real"
+                ],
+                [
+                    "Hematoclit",
+                    "real"
+                ],
+                [
+                    "platelet",
+                    "integer"
+                ],
+                [
+                    "prothrombin time",
+                    "real"
+                ],
+                [
+                    "activated partial prothrombin time",
+                    "integer"
+                ],
+                [
+                    "fibrinogen",
+                    "real"
+                ],
+                [
+                    "PIC",
+                    "integer"
+                ],
+                [
+                    "TAT",
+                    "integer"
+                ],
+                [
+                    "TAT2",
+                    "integer"
+                ],
+                [
+                    "proteinuria",
+                    "text"
+                ],
+                [
+                    "Ig G",
+                    "integer"
+                ],
+                [
+                    "Ig A",
+                    "integer"
+                ],
+                [
+                    "Ig M",
+                    "integer"
+                ],
+                [
+                    "C-reactive protein",
+                    "text"
+                ],
+                [
+                    "Rhuematoid Factor",
+                    "text"
+                ],
+                [
+                    "RAHA",
+                    "text"
+                ],
+                [
+                    "complement 3",
+                    "integer"
+                ],
+                [
+                    "complement 4",
+                    "integer"
+                ],
+                [
+                    "anti-ribonuclear protein",
+                    "text"
+                ],
+                [
+                    "anti-SM",
+                    "text"
+                ],
+                [
+                    "anti-scl70",
+                    "text"
+                ],
+                [
+                    "anti-SSA",
+                    "text"
+                ],
+                [
+                    "anti-SSB",
+                    "text"
+                ],
+                [
+                    "anti-centromere",
+                    "text"
+                ],
+                [
+                    "anti-DNA",
+                    "text"
+                ],
+                [
+                    "anti-DNA",
+                    "integer"
+                ]
+            ]
+        }
+    },
+    "toxicology": {
+        "tables": {
+            "atom": [
+                [
+                    "atom id",
+                    "text"
+                ],
+                [
+                    "molecule id",
+                    "text"
+                ],
+                [
+                    "element",
+                    "text"
+                ]
+            ],
+            "bond": [
+                [
+                    "bond_id",
+                    "text"
+                ],
+                [
+                    "molecule_id",
+                    "text"
+                ],
+                [
+                    "bond_type",
+                    "text"
+                ]
+            ],
+            "connected": [
+                [
+                    "atom id",
+                    "text"
+                ],
+                [
+                    "atom id 2",
+                    "text"
+                ],
+                [
+                    "bond id",
+                    "text"
+                ]
+            ],
+            "molecule": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "molecule id",
+                    "text"
+                ],
+                [
+                    "label",
+                    "text"
+                ]
+            ]
+        }
+    },
+    "student_club": {
+        "tables": {
+            "Event": [
+                [
+                    "event id",
+                    "text"
+                ],
+                [
+                    "event name",
+                    "text"
+                ],
+                [
+                    "event date",
+                    "text"
+                ],
+                [
+                    "type",
+                    "text"
+                ],
+                [
+                    "notes",
+                    "text"
+                ],
+                [
+                    "location",
+                    "text"
+                ],
+                [
+                    "status",
+                    "text"
+                ]
+            ],
+            "Major": [
+                [
+                    "major id",
+                    "text"
+                ],
+                [
+                    "major name",
+                    "text"
+                ],
+                [
+                    "department",
+                    "text"
+                ],
+                [
+                    "college",
+                    "text"
+                ]
+            ],
+            "Zip_Code": [
+                [
+                    "zip code",
+                    "integer"
+                ],
+                [
+                    "type",
+                    "text"
+                ],
+                [
+                    "city",
+                    "text"
+                ],
+                [
+                    "county",
+                    "text"
+                ],
+                [
+                    "state",
+                    "text"
+                ],
+                [
+                    "short state",
+                    "text"
+                ]
+            ],
+            "Attendance": [
+                [
+                    "link to event",
+                    "text"
+                ],
+                [
+                    "link to member",
+                    "text"
+                ]
+            ],
+            "Budget": [
+                [
+                    "budget id",
+                    "text"
+                ],
+                [
+                    "category",
+                    "text"
+                ],
+                [
+                    "spent",
+                    "real"
+                ],
+                [
+                    "remaining",
+                    "real"
+                ],
+                [
+                    "amount",
+                    "integer"
+                ],
+                [
+                    "event status",
+                    "text"
+                ],
+                [
+                    "link to event",
+                    "text"
+                ]
+            ],
+            "Expense": [
+                [
+                    "expense id",
+                    "text"
+                ],
+                [
+                    "expense description",
+                    "text"
+                ],
+                [
+                    "expense date",
+                    "text"
+                ],
+                [
+                    "cost",
+                    "real"
+                ],
+                [
+                    "approved",
+                    "text"
+                ],
+                [
+                    "link to member",
+                    "text"
+                ],
+                [
+                    "link to budget",
+                    "text"
+                ]
+            ],
+            "Income": [
+                [
+                    "income id",
+                    "text"
+                ],
+                [
+                    "date received",
+                    "text"
+                ],
+                [
+                    "amount",
+                    "integer"
+                ],
+                [
+                    "source",
+                    "text"
+                ],
+                [
+                    "notes",
+                    "text"
+                ],
+                [
+                    "link to member",
+                    "text"
+                ]
+            ],
+            "Member": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "member id",
+                    "text"
+                ],
+                [
+                    "first name",
+                    "text"
+                ],
+                [
+                    "last name",
+                    "text"
+                ],
+                [
+                    "email",
+                    "text"
+                ],
+                [
+                    "position",
+                    "text"
+                ],
+                [
+                    "t_shirt_size",
+                    "text"
+                ],
+                [
+                    "phone",
+                    "text"
+                ],
+                [
+                    "zip",
+                    "integer"
+                ],
+                [
+                    "link to major",
+                    "text"
+                ]
+            ]
+        }
+    },
+    "superhero": {
+        "tables": {
+            "alignment": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "alignment",
+                    "text"
+                ]
+            ],
+            "attribute": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "attribute name",
+                    "text"
+                ]
+            ],
+            "colour": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "colour",
+                    "text"
+                ]
+            ],
+            "gender": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "gender",
+                    "text"
+                ]
+            ],
+            "publisher": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "publisher_name",
+                    "text"
+                ]
+            ],
+            "race": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "race",
+                    "text"
+                ]
+            ],
+            "superhero": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "superhero name",
+                    "text"
+                ],
+                [
+                    "full name",
+                    "text"
+                ],
+                [
+                    "gender id",
+                    "integer"
+                ],
+                [
+                    "eye colour id",
+                    "integer"
+                ],
+                [
+                    "hair colour id",
+                    "integer"
+                ],
+                [
+                    "skin colour id",
+                    "integer"
+                ],
+                [
+                    "race id",
+                    "integer"
+                ],
+                [
+                    "publisher id",
+                    "integer"
+                ],
+                [
+                    "alignment id",
+                    "integer"
+                ],
+                [
+                    "height cm",
+                    "integer"
+                ],
+                [
+                    "weight kg",
+                    "integer"
+                ]
+            ],
+            "hero_attribute": [
+                [
+                    "hero id",
+                    "integer"
+                ],
+                [
+                    "attribute id",
+                    "integer"
+                ],
+                [
+                    "attribute value",
+                    "integer"
+                ]
+            ],
+            "superpower": [
+                [
+                    "id",
+                    "integer"
+                ],
+                [
+                    "power name",
+                    "text"
+                ]
+            ],
+            "hero_power": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "hero id",
+                    "integer"
+                ],
+                [
+                    "power id",
+                    "integer"
+                ]
+            ]
+        }
+    },
+    "codebase_community": {
+        "tables": {
+            "badges": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "User Id",
+                    "integer"
+                ],
+                [
+                    "Name",
+                    "text"
+                ],
+                [
+                    "Date",
+                    "datetime"
+                ]
+            ],
+            "comments": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Post Id",
+                    "integer"
+                ],
+                [
+                    "Score",
+                    "integer"
+                ],
+                [
+                    "Text",
+                    "text"
+                ],
+                [
+                    "Creation Date",
+                    "datetime"
+                ],
+                [
+                    "User Id",
+                    "integer"
+                ],
+                [
+                    "User Display Name",
+                    "text"
+                ]
+            ],
+            "postHistory": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Post History Type Id",
+                    "integer"
+                ],
+                [
+                    "Post Id",
+                    "integer"
+                ],
+                [
+                    "Revision GUID",
+                    "text"
+                ],
+                [
+                    "Creation Date",
+                    "datetime"
+                ],
+                [
+                    "User Id",
+                    "integer"
+                ],
+                [
+                    "Text",
+                    "text"
+                ],
+                [
+                    "Comment",
+                    "text"
+                ],
+                [
+                    "User Display Name",
+                    "text"
+                ]
+            ],
+            "postLinks": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Creation Date",
+                    "datetime"
+                ],
+                [
+                    "Post Id",
+                    "integer"
+                ],
+                [
+                    "Related Post Id",
+                    "integer"
+                ],
+                [
+                    "Link Type Id",
+                    "integer"
+                ]
+            ],
+            "posts": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Post Type Id",
+                    "integer"
+                ],
+                [
+                    "Accepted Answer Id",
+                    "integer"
+                ],
+                [
+                    "Creation Date",
+                    "datetime"
+                ],
+                [
+                    "Score",
+                    "integer"
+                ],
+                [
+                    "View Count",
+                    "integer"
+                ],
+                [
+                    "Body",
+                    "text"
+                ],
+                [
+                    "Owner User Id",
+                    "integer"
+                ],
+                [
+                    "Last Activity Date",
+                    "datetime"
+                ],
+                [
+                    "Title",
+                    "text"
+                ],
+                [
+                    "Tags",
+                    "text"
+                ],
+                [
+                    "Answer Count",
+                    "integer"
+                ],
+                [
+                    "Comment Count",
+                    "integer"
+                ],
+                [
+                    "Favorite Count",
+                    "integer"
+                ],
+                [
+                    "Last Editor User Id",
+                    "integer"
+                ],
+                [
+                    "Last Edit Date",
+                    "datetime"
+                ],
+                [
+                    "Community Owned Date",
+                    "datetime"
+                ],
+                [
+                    "ParentId",
+                    "integer"
+                ],
+                [
+                    "Closed Date",
+                    "datetime"
+                ],
+                [
+                    "Owner Display Name",
+                    "text"
+                ],
+                [
+                    "Last Editor Display Name",
+                    "text"
+                ]
+            ],
+            "tags": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Tag Name",
+                    "text"
+                ],
+                [
+                    "Count",
+                    "integer"
+                ],
+                [
+                    "Excerpt Post Id",
+                    "integer"
+                ],
+                [
+                    "Wiki Post Id",
+                    "integer"
+                ]
+            ],
+            "users": [
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Reputation",
+                    "integer"
+                ],
+                [
+                    "Creation Date",
+                    "datetime"
+                ],
+                [
+                    "Display Name",
+                    "text"
+                ],
+                [
+                    "Last Access Date",
+                    "datetime"
+                ],
+                [
+                    "Website Url",
+                    "text"
+                ],
+                [
+                    "Location",
+                    "text"
+                ],
+                [
+                    "About Me",
+                    "text"
+                ],
+                [
+                    "Views",
+                    "integer"
+                ],
+                [
+                    "UpVotes",
+                    "integer"
+                ],
+                [
+                    "DownVotes",
+                    "integer"
+                ],
+                [
+                    "Account Id",
+                    "integer"
+                ],
+                [
+                    "Age",
+                    "integer"
+                ],
+                [
+                    "Profile Image Url",
+                    "text"
+                ]
+            ],
+            "votes": [
+                [
+                    "*",
+                    "text"
+                ],
+                [
+                    "Id",
+                    "integer"
+                ],
+                [
+                    "Post Id",
+                    "integer"
+                ],
+                [
+                    "Vote Type Id",
+                    "integer"
+                ],
+                [
+                    "Creation Date",
+                    "date"
+                ],
+                [
+                    "User Id",
+                    "integer"
+                ],
+                [
+                    "Bounty Amount",
+                    "integer"
+                ]
+            ]
+        }
+    }
+}
