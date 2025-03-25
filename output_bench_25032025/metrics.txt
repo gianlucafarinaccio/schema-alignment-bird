@@ -1,0 +1,60 @@
+Metrics for each db_id:
+DB ID: debit_card_specializing
+  Precision: 0.5555555555555556
+  Recall: 0.5555555555555556
+  F1 Score: 0.5555555555555556
+
+DB ID: student_club
+  Precision: 0.7272727272727273
+  Recall: 0.8
+  F1 Score: 0.761904761904762
+
+DB ID: thrombosis_prediction
+  Precision: 0.6956521739130435
+  Recall: 0.7804878048780488
+  F1 Score: 0.7356321839080461
+
+DB ID: european_football_2
+  Precision: 0.8431372549019608
+  Recall: 0.9772727272727273
+  F1 Score: 0.9052631578947369
+
+DB ID: formula_1
+  Precision: 0.5151515151515151
+  Recall: 0.6666666666666666
+  F1 Score: 0.5811965811965812
+
+DB ID: superhero
+  Precision: 0.8048780487804879
+  Recall: 0.717391304347826
+  F1 Score: 0.7586206896551724
+
+DB ID: codebase_community
+  Precision: 0.8666666666666667
+  Recall: 0.8297872340425532
+  F1 Score: 0.8478260869565217
+
+DB ID: card_games
+  Precision: 0.7
+  Recall: 0.7608695652173914
+  F1 Score: 0.7291666666666667
+
+DB ID: toxicology
+  Precision: 0.4418604651162791
+  Recall: 0.8260869565217391
+  F1 Score: 0.5757575757575758
+
+DB ID: california_schools
+  Precision: 0.75
+  Recall: 0.84
+  F1 Score: 0.7924528301886793
+
+DB ID: financial
+  Precision: 0.5
+  Recall: 0.7142857142857143
+  F1 Score: 0.588235294117647
+
+Overall Metrics:
+Precision: 0.6829268292682927
+Recall: 0.7758186397984886
+F1 Score: 0.7264150943396226

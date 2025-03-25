@@ -1,5 +1,19 @@
 import json
 import matplotlib.pyplot as plt
+import argparse
+
+# Create the parser
+parser = argparse.ArgumentParser()
+
+# Add arguments
+parser.add_argument("-n","--name", type=str, help="name of your benchmark",required=True)
+
+# Parse the arguments
+args = parser.parse_args()
+
+benchmark_name = args.name
+
+
 
 def calculate_metrics(data):
     # Inizializzare i dizionari per memorizzare i calcoli per db_id
@@ -57,7 +71,7 @@ def calculate_metrics(data):
     return db_results, {'precision': precision, 'recall': recall, 'f1_score': f1_score}
 
 
-def plot_metrics(db_results):
+def plot_metrics(db_results, output_folder="."):
     # Estrazione dei valori per i vari db_id
     db_ids = list(db_results.keys())
     precision_values = [metrics['precision'] for metrics in db_results.values()]
@@ -65,60 +79,61 @@ def plot_metrics(db_results):
     f1_values = [metrics['f1_score'] for metrics in db_results.values()]
     
     # Generare una lista di colori distinti
-    colors = plt.cm.get_cmap('tab20', len(db_ids))  # Usa una mappa di colori per una lista di colori distinti
+    colors = plt.cm.get_cmap('tab20', len(db_ids))
     
-    # Creazione di un grafico per Precision
-    plt.figure(figsize=(15, 5))
-
     # Precisione
-    plt.subplot(131)
+    plt.figure(figsize=(10, 5))
     plt.bar(db_ids, precision_values, color=colors(range(len(db_ids))))
     plt.xlabel('DB ID')
     plt.ylabel('Precision')
-    plt.title('Precision per DB ID')
-    plt.xticks(rotation=90)  # Ruotare le etichette sull'asse X per evitare sovrapposizioni
-
+    plt.title('Precision')
+    plt.xticks(rotation=90)
+    plt.tight_layout()
+    plt.savefig(f"{output_folder}/precision.png")
+    plt.close()
+    
     # Recall
-    plt.subplot(132)
+    plt.figure(figsize=(10, 5))
     plt.bar(db_ids, recall_values, color=colors(range(len(db_ids))))
     plt.xlabel('DB ID')
     plt.ylabel('Recall')
-    plt.title('Recall per DB ID')
-    plt.xticks(rotation=90)  # Ruotare le etichette sull'asse X
-
-    # F1
-    plt.subplot(133)
+    plt.title('Recall')
+    plt.xticks(rotation=90)
+    plt.tight_layout()
+    plt.savefig(f"{output_folder}/recall.png")
+    plt.close()
+    
+    # F1 Score
+    plt.figure(figsize=(10, 5))
     plt.bar(db_ids, f1_values, color=colors(range(len(db_ids))))
     plt.xlabel('DB ID')
     plt.ylabel('F1 Score')
-    plt.title('F1 Score per DB ID')
-    plt.xticks(rotation=90)  # Ruotare le etichette sull'asse X
-
-    # Mostrare il grafico
+    plt.title('F1 Score')
+    plt.xticks(rotation=90)
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{output_folder}/f1_score.png")
+    plt.close()
 
 
 
-with open('response_t.json','r') as f:
+with open(f'output_{benchmark_name}/output_completed.json','r') as f:
     data = json.load(f)
 
 # Calcolare le metriche
 db_results, overall_results = calculate_metrics(data)
 
-# Stampare i risultati per db_id
-print("Metrics for each db_id:")
-for db_id, metrics in db_results.items():
-    print(f"DB ID: {db_id}")
-    print(f"  Precision: {metrics['precision']}")
-    print(f"  Recall: {metrics['recall']}")
-    print(f"  F1 Score: {metrics['f1_score']}")
-    print()
+with open(f'output_{benchmark_name}/metrics.txt','w') as f:
+    f.write("Metrics for each db_id:\n")
+    for db_id, metrics in db_results.items():
+        f.write(f"DB ID: {db_id}\n")
+        f.write(f"  Precision: {metrics['precision']}\n")
+        f.write(f"  Recall: {metrics['recall']}\n")
+        f.write(f"  F1 Score: {metrics['f1_score']}\n")
+        f.write("\n")
 
-# Stampare i risultati generali
-print("Overall Metrics:")
-print(f"Precision: {overall_results['precision']}")
-print(f"Recall: {overall_results['recall']}")
-print(f"F1 Score: {overall_results['f1_score']}")
+    f.write("Overall Metrics:\n")
+    f.write(f"Precision: {overall_results['precision']}\n")
+    f.write(f"Recall: {overall_results['recall']}\n")
+    f.write(f"F1 Score: {overall_results['f1_score']}\n")
 
-plot_metrics(db_results)
+plot_metrics(db_results, f"output_{benchmark_name}")
