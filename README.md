@@ -20,6 +20,13 @@ The scripts are designed to be executed using Groq API free tier so the total ex
  >\dataset: mini-dev BIRD dataset	and DBs schema<br>
  >\output_<your_bench_name>: all results and metrics of your execution<br>
 
+## Results
+This system obtain the following metrics using **Llama-3.3-70b-8192** and **mini-dev** as dataset. More information and detailed metrics for each DB can be found in *"output_bench_25032025"* directory.
+
+> * recall: 0.7758186397984886
+> * precision: 0.6829268292682927
+> * F1-score: 0.7264150943396226
+
 ## Installation
 
 * clone repo
