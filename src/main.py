@@ -134,7 +134,7 @@ Use of LLM to infer the ST's names based on natural language query and DB schema
 See "llm_adapter.py" for prompt-template.
 
 The call to LLM is based on Groq API (Free), so to respect the rate-limits of 30 request/minute
-we add a 1minute sleep between batches of 30 requests.
+we add a 2.2s sleep between each request.
 
 The completed JSON in file will be saved in /output-{bench_name} dir.
 It is updated every 30request, to avoid data loss in case of API crash.

@@ -22,27 +22,22 @@ It returns a JSON that contains only relevant information about every DB schema.
 
 '''
 def format_db_schema(json_data):
-    # Estrai i dati dal JSON in input
+
     table_names = json_data["table_names_original"]
     column_names = json_data["column_names_original"]
     column_types = json_data["column_types"]
     
-    # Inizializza la struttura del risultato
     db_schema = {"tables": {}}
 
-    # Itera sulle tabelle e assegna le colonne corrispondenti
     table_columns = {table: [] for table in table_names}
     
-    # Popola le tabelle con i nomi delle colonne e i rispettivi tipi
     for (index, column) in enumerate(column_names):
         table_index = column[0]
         column_name = column[1]
         column_type = column_types[index]
         
-        # Aggiungi il nome della colonna e il tipo alla tabella corrispondente
         table_columns[table_names[table_index]].append([column_name, column_type])
     
-    # Aggiungi le tabelle al risultato
     db_schema["tables"] = table_columns
     
     return db_schema
